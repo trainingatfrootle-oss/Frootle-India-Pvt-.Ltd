@@ -1,0 +1,301 @@
+/* ===========================================
+   TABLETS
+=========================================== */
+
+@media (max-width:1200px){
+
+.hero-content h1{
+
+font-size:80px;
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.brand-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.services-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.why-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.timeline-items{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+}
+
+}
+
+/* ===========================================
+   SMALL TABLETS
+=========================================== */
+
+@media (max-width:900px){
+
+.menu{
+
+display:block;
+
+}
+
+.navbar ul{
+
+position:fixed;
+
+top:80px;
+
+left:-100%;
+
+width:100%;
+
+height:calc(100vh - 80px);
+
+background:#050505;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:45px;
+
+transition:.45s;
+
+}
+
+.navbar ul.active{
+
+left:0;
+
+}
+
+.hero-content h1{
+
+font-size:64px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+.about-home h2,
+
+.services h2,
+
+.why h2,
+
+.timeline h2,
+
+.testimonial h2{
+
+font-size:44px;
+
+}
+
+.brand-grid,
+
+.services-grid,
+
+.why-grid,
+
+.timeline-items{
+
+grid-template-columns:1fr;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-preview h2{
+
+font-size:48px;
+
+}
+
+}
+
+/* ===========================================
+   MOBILE
+=========================================== */
+
+@media (max-width:600px){
+
+.container{
+
+width:92%;
+
+}
+
+.navbar{
+
+height:70px;
+
+}
+
+.logo{
+
+font-size:24px;
+
+letter-spacing:4px;
+
+}
+
+.hero{
+
+padding-top:70px;
+
+}
+
+.hero-content h1{
+
+font-size:46px;
+
+}
+
+.hero-content p{
+
+letter-spacing:3px;
+
+font-size:13px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+line-height:1.7;
+
+}
+
+.hero-btn{
+
+padding:15px 30px;
+
+font-size:14px;
+
+}
+
+.about-home,
+
+.services,
+
+.why,
+
+.timeline,
+
+.testimonial,
+
+.contact-preview{
+
+padding:90px 0;
+
+}
+
+.about-home h2,
+
+.services h2,
+
+.why h2,
+
+.timeline h2,
+
+.testimonial h2,
+
+.contact-preview h2{
+
+font-size:34px;
+
+}
+
+.stat{
+
+padding:40px 25px;
+
+}
+
+.stat h2{
+
+font-size:42px;
+
+}
+
+.brand-card{
+
+height:170px;
+
+font-size:28px;
+
+}
+
+.service-card,
+
+.why-card,
+
+.timeline-item{
+
+padding:30px;
+
+}
+
+.testimonial-card{
+
+padding:40px 25px;
+
+}
+
+.testimonial-card p{
+
+font-size:20px;
+
+}
+
+.footer-grid h3{
+
+font-size:32px;
+
+}
+
+.socials{
+
+justify-content:flex-start;
+
+flex-wrap:wrap;
+
+}
+
+}
