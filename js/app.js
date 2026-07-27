@@ -318,7 +318,166 @@ document.querySelectorAll(".hero-btn").forEach(button => {
 const copyright = document.querySelector(".copyright");
 
 if(copyright){
+/* ==========================================
+   PART 3
+   Premium UI Effects
+========================================== */
 
+// =======================
+// Scroll Progress Bar
+// =======================
+
+const progressBar = document.createElement("div");
+
+progressBar.style.position = "fixed";
+progressBar.style.top = "0";
+progressBar.style.left = "0";
+progressBar.style.height = "3px";
+progressBar.style.width = "0%";
+progressBar.style.background = "#ffffff";
+progressBar.style.zIndex = "99999";
+progressBar.style.transition = "width .15s linear";
+
+document.body.appendChild(progressBar);
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = window.scrollY;
+
+    const docHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress = (scrollTop / docHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
+
+
+// =======================
+// Back To Top Button
+// =======================
+
+const topBtn = document.createElement("button");
+
+topBtn.innerHTML = "↑";
+
+topBtn.style.position = "fixed";
+topBtn.style.right = "30px";
+topBtn.style.bottom = "30px";
+topBtn.style.width = "55px";
+topBtn.style.height = "55px";
+topBtn.style.borderRadius = "50%";
+topBtn.style.border = "1px solid rgba(255,255,255,.2)";
+topBtn.style.background = "#111";
+topBtn.style.color = "#fff";
+topBtn.style.fontSize = "22px";
+topBtn.style.cursor = "pointer";
+topBtn.style.opacity = "0";
+topBtn.style.pointerEvents = "none";
+topBtn.style.transition = ".35s";
+topBtn.style.zIndex = "9999";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        topBtn.style.opacity = "1";
+        topBtn.style.pointerEvents = "all";
+
+    } else {
+
+        topBtn.style.opacity = "0";
+        topBtn.style.pointerEvents = "none";
+
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+
+// =======================
+// Mouse Glow
+// =======================
+
+const glow = document.createElement("div");
+
+glow.style.position = "fixed";
+glow.style.width = "250px";
+glow.style.height = "250px";
+glow.style.borderRadius = "50%";
+glow.style.pointerEvents = "none";
+glow.style.background =
+"radial-gradient(circle, rgba(255,255,255,.08), transparent 70%)";
+glow.style.transform = "translate(-50%,-50%)";
+glow.style.zIndex = "0";
+glow.style.transition = "transform .08s linear";
+
+document.body.appendChild(glow);
+
+window.addEventListener("mousemove",(e)=>{
+
+glow.style.left=e.clientX+"px";
+
+glow.style.top=e.clientY+"px";
+
+});
+
+
+// =======================
+// Magnetic Buttons
+// =======================
+
+document.querySelectorAll(".hero-btn").forEach(button=>{
+
+button.addEventListener("mousemove",(e)=>{
+
+const rect=button.getBoundingClientRect();
+
+const x=e.clientX-rect.left-rect.width/2;
+
+const y=e.clientY-rect.top-rect.height/2;
+
+button.style.transform=`translate(${x*.15}px,${y*.15}px)`;
+
+});
+
+button.addEventListener("mouseleave",()=>{
+
+button.style.transform="translate(0,0)";
+
+});
+
+});
+
+
+// =======================
+// Console Signature
+// =======================
+
+console.log(
+"%cFROOTLE INFINITY",
+"font-size:22px;font-weight:bold;color:white;background:black;padding:8px 14px;border-radius:6px;"
+);
+
+console.log(
+"%cDesigned with ❤️ using HTML, CSS, GSAP & JavaScript",
+"color:#999;font-size:13px;"
+);
     copyright.innerHTML =
     `© ${new Date().getFullYear()} Frootle India Pvt. Ltd. All Rights Reserved.`;
 
